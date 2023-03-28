@@ -1,0 +1,6 @@
+node_modules
+
+backend/raw
+.env
+
+GOOGLE_APPLICATION_CREDENTIALS.json
