@@ -1,6 +1,7 @@
 node_modules
 
 backend/raw
+backend/tmp
 .env
 
 GOOGLE_APPLICATION_CREDENTIALS.json
