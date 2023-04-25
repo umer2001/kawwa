@@ -3,10 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "npx functions-framework --target=storeVideo [--signature-type=http]",
+    "deploy": "bash ./scripts/deploy.sh"
+  },
   "dependencies": {
     "@google-cloud/storage": "^6.9.4",
     "@google-cloud/video-intelligence": "^4.2.1",
     "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.1.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "jimp": "^0.22.7",
+    "openai": "^3.2.1",
+    "replicate": "^0.10.0",
     "ytdl-core": "^4.11.2"
+  },
+  "devDependencies": {
+    "@google-cloud/functions-framework": "^3.1.3"
   }
 }

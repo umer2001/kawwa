@@ -16,23 +16,23 @@ const storage = new Storage({
 });
 
 // upload a video to google cloud storage bucket
-async function uploadVideo(videoPath) {
+async function uploadToBucket(bucketName, objectPath, targetFolder = "") {
   // upload video to google cloud storage bucket
-  await storage.bucket(process.env.RAW_BUCKET_NAME).upload(videoPath, {
-    gzip: true,
+  await storage.bucket(bucketName).upload(objectPath, {
     metadata: {
       cacheControl: "public, max-age=31536000",
     },
+    destination: `${targetFolder}${path.basename(objectPath)}`,
   });
 
-  // get the public url of the video
-  const publicUrl = `https://storage.googleapis.com/${
-    process.env.RAW_BUCKET_NAME
-  }/${path.basename(videoPath)}`;
+  // get the public url of the object
+  const publicUrl = `https://storage.googleapis.com/${bucketName}/${targetFolder}${path.basename(
+    objectPath
+  )}`;
 
-  console.info(`Video uploaded to: ${publicUrl}`);
+  console.info(`Object uploaded to: ${publicUrl}`);
 
   return publicUrl;
 }
 
-module.exports = uploadVideo;
+module.exports = uploadToBucket;
