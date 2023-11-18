@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 const Blend = () => {
     const [file, setFile] = useState(null);
     const navigate = useNavigate();
-    const { mutate } = useMutation({
+    const { mutate, isPending, } = useMutation({
         mutationFn: initRequest,
         onSuccess: ({ data: { id } }) => navigate(`/createion/${id}`),
     });
@@ -44,7 +44,7 @@ const Blend = () => {
     return (
         <main>
             <section id="hero" class="row mx-0">
-                <div class="col-6">
+                <div class="col-12 col-sm-6">
                     <h2 className='mb-4'>Let the Kawwa know about Your Story<span class="colr-dot">!</span></h2>
                     <form onSubmit={formik.handleSubmit}>
                         <div className="row">
@@ -131,10 +131,10 @@ const Blend = () => {
                             error={{ text: formik.errors.approach, props: { className: 'text-danger' } }}
                             options={approachOptions} />
 
-                        <button className='w-100 py-3' type='submit'>Blend</button>
+                        <button disabled={isPending} className='w-100 py-3' type='submit'>{isPending ? "Starting Blending..." : "Blend"}</button>
                     </form>
                 </div>
-                <div class="col-6">
+                <div class="col-12 col-sm-6 d-none d-sm-block">
                     <img className='d-block' src="/kawwa.svg" alt="Kawwa" style={{
                         marginLeft: 'auto',
                     }} />
