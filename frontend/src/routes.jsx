@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 const Router = () => {
   return useRoutes([
     {
-      path: "/home",
+      path: "/",
       element: <Home />,
     },
     {
