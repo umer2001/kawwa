@@ -51,7 +51,7 @@ const Createions = () => {
                 <span className="colr-dot">.</span>
               </h2>
               <video
-                height="500"
+                // height="500"
                 className="fg-vid"
                 autoPlay={idx === 0}
                 loop
