@@ -485,6 +485,8 @@ input[type="range"] {
 /* buttons */
 button,
 a {
+  display: block;
+  width: fit-content;
   background-color: var(--green-400);
   color: var(--black);
   border: 0.188rem solid var(--green-400);
@@ -680,4 +682,3 @@ footer small {
     transform: rotate(360deg);
   }
 }
-
