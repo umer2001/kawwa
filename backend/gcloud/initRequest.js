@@ -53,6 +53,7 @@ exports.initRequest = async (req, res) => {
                 brandDescription: fields.brandDescription,
                 logo: logoUrl,
                 youtubeVideoLink: fields.youtubeVideoLink,
+                createdAt: new Date().toISOString(),
             }
             const blendRequest = new BlendRequest(request);
             const reqId = await blendRequest.createRequest();
