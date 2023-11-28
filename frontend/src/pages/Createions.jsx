@@ -1,6 +1,6 @@
 import React from "react";
 import { db } from "../utils/firebase";
-import { collection, query, getDocs, where } from "firebase/firestore";
+import { collection, query, getDocs, where, orderBy, limit } from "firebase/firestore";
 
 const requestsRef = collection(db, "requests");
 
@@ -9,7 +9,12 @@ const Createions = () => {
   console.log(creations);
   React.useEffect(() => {
     const getCreations = async () => {
-      const q = query(requestsRef, where("status", "==", "completed"));
+      const q = query(
+        requestsRef,
+        where("status", "==", "completed"),
+        orderBy("createdAt", "desc"),
+        limit(5)
+      );
       const querySnapshot = await getDocs(q);
       const data = querySnapshot.docs.map((doc) => ({
         id: doc.id,
