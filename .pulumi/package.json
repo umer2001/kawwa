@@ -1,0 +1,14 @@
+{
+    "name": "Kawwa",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "pulumi up -s Kawwa-kawwa",
+        "destroy": "pulumi destroy --yes"
+    },
+    "dependencies": {
+        "@pulumi/archive": "^0.0.2",
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/gcp": "^6.0.0",
+        "dotenv": "^16.3.1"
+    }
+}
