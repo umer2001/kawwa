@@ -19,10 +19,10 @@ const Blend = () => {
             value: 'sidebar',
             label: 'Sidebar'
         },
-        {
-            value: 'background',
-            label: 'Background'
-        },
+        // {
+        //     value: 'background',
+        //     label: 'Background'
+        // },
         {
             value: 'voice',
             label: 'Voice'
