@@ -13,7 +13,7 @@ const Createions = () => {
         requestsRef,
         where("status", "==", "completed"),
         orderBy("createdAt", "desc"),
-        limit(5)
+        limit(10)
       );
       const querySnapshot = await getDocs(q);
       const data = querySnapshot.docs.map((doc) => ({
