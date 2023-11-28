@@ -53,7 +53,7 @@ async function combineAd(videoPath, adPath, outputVideoPath, adWidth = 256) {
 
     video.on("error", (error) => {
       console.error(error);
-      reject(err);
+      reject(error);
     });
   });
 }

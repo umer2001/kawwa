@@ -1,10 +1,6 @@
-const Replicate = require("replicate");
 const fetch = require("node-fetch");
 const fs = require("fs");
-
-const replicate = new Replicate({
-  auth: "***REMOVED***",
-});
+const replicate = require("./replicate");
 
 const model =
   "stability-ai/stable-diffusion:f178fa7a1ae43a9a9af01b833b9d2ecf97b1bcb0acfd2dc5dd04895e042863f1";
