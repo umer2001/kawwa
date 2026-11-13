@@ -3,8 +3,8 @@ const ElevenLabs = require("elevenlabs-node");
 
 const voice = new ElevenLabs(
     {
-        apiKey: process.env.ELEVEN_LABS_API_KEY ?? "***REMOVED***",
-        voiceId: "***REMOVED***"
+        apiKey: process.env.ELEVEN_LABS_API_KEY,
+        voiceId: process.env.ELEVEN_LABS_VOICE_ID
     }
 );
 

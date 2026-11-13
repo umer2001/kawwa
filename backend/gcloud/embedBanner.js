@@ -30,7 +30,7 @@ exports.embedBanner = async (event, context) => {
   const bannerAdPath = await generateBanner(bgPath, logoPath, marketingText);
   blendRequest.addLog("Combining banner ad with video");
   const outputPath = await combineAd(
-    req?.assets.rawVideo ?? `https://storage.googleapis.com/***REMOVED***/videos/${reqId}-${req.youtubeVideoLink.split("=")[1]}-merged.mp4`,
+    req?.assets.rawVideo ?? `https://storage.googleapis.com/${process.env.RAW_BUCKET_NAME}/videos/${reqId}-${req.youtubeVideoLink.split("=")[1]}-merged.mp4`,
     bannerAdPath,
     `${process.env.TEMP_FOLDER}/${reqId}-processed.mp4`
   );

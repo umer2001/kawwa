@@ -1,6 +1,7 @@
+require("dotenv").config();
 const axios = require("axios");
 
-const RVC_HOST_URL = "***REMOVED***";
+const RVC_HOST_URL = process.env.RVC_HOST_URL;
 const api = axios.create({
     baseURL: RVC_HOST_URL
 });
